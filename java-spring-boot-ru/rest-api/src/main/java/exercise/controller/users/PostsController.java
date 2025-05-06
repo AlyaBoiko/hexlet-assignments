@@ -1,10 +1,12 @@
 package exercise.controller.users;
 
+import java.net.URI;
 import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,7 +25,7 @@ public class PostsController {
     public ResponseEntity<List<Post>> getUserPosts(@PathVariable int id) {
         List<Post> result = posts.stream()
                 .filter(post -> post.getUserId() == id)
-                .collect(Collections.toList());
+                .collect(Collectors.toList());
         return ResponseEntity.ok(result);
     }
 
