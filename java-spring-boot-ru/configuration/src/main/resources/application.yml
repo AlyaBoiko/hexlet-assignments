@@ -7,6 +7,7 @@ spring:
   output:
     ansi:
       enabled: always
+
 # END
 
 users:
