@@ -10,9 +10,9 @@ import org.mapstruct.ReportingPolicy;
 import exercise.model.Guest;
 
 @Mapper(
-    nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
-    componentModel = MappingConstants.ComponentModel.SPRING,
-    unmappedTargetPolicy = ReportingPolicy.IGNORE
+        nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
+        componentModel = MappingConstants.ComponentModel.SPRING,
+        unmappedTargetPolicy = ReportingPolicy.IGNORE
 )
 public abstract class GuestMapper {
 
