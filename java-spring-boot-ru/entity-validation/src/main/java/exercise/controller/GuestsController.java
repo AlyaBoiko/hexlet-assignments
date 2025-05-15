@@ -34,7 +34,7 @@ public class GuestsController {
     public GuestDTO show(@PathVariable long id) {
 
         var guest =  guestRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Guest with id " + id + " not found"));
+            .orElseThrow(() -> new ResourceNotFoundException("Guest with id " + id + " not found"));
         var guestDto = guestMapper.map(guest);
         return guestDto;
     }

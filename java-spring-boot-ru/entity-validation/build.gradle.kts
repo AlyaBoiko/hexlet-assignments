@@ -6,6 +6,7 @@ plugins {
     id("org.springframework.boot") version "3.2.2"
     id("io.spring.dependency-management") version "1.1.3"
     id("com.github.ben-manes.versions") version "0.48.0"
+    id("io.freefair.lombok") version "8.6"
 }
 
 group = "exercise"
@@ -33,10 +34,6 @@ dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
     testImplementation("net.javacrumbs.json-unit:json-unit-assertj:3.2.2")
-    compileOnly("org.projectlombok:lombok:1.18.30")
-    annotationProcessor("org.projectlombok:lombok:1.18.30")
-    testCompileOnly("org.projectlombok:lombok:1.18.30")
-    testAnnotationProcessor("org.projectlombok:lombok:1.18.30")
 }
 
 tasks.test {
@@ -46,8 +43,4 @@ tasks.test {
         events = mutableSetOf(TestLogEvent.FAILED, TestLogEvent.PASSED, TestLogEvent.SKIPPED)
         showStandardStreams = true
     }
-}
-afterEvaluate {
-    tasks.findByName("generateEffectiveLombokConfig")?.enabled = false
-    tasks.findByName("generateTestEffectiveLombokConfig")?.enabled = false
 }

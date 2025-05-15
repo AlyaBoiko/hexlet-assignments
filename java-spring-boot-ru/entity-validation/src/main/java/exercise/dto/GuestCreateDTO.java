@@ -1,7 +1,5 @@
 package exercise.dto;
 
-// BEGIN
-
 import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -27,4 +25,3 @@ public class GuestCreateDTO {
     @FutureOrPresent(message = "Срок действия клубной карты должен быть в будущем или сегодня.")
     private LocalDate cardValidUntil;
 }
-// END
